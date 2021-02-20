@@ -12,17 +12,22 @@
 </head>
 
 <body>
-    <div class="topo text-center">
-        <h1 class="text-center">AJAX</h1>
-        <h6>Escolha uma das opções para visualizar o retorno dos respectivos endpoints da API do GitHub.</h6>
+    <div class="topo text-center mt-5">
+        <h1 class="text-center p-2">AJAX</h1>
+        <h6 class="p-2">Escolha uma das opções para visualizar o retorno dos respectivos endpoints da API do GitHub.</h6>
 
-        <input type="text" class="w-25 " placeholder="Nome do usuario">
-        <button type="button" class="btn btn-primary">Informações Users GitHub</button>
+        <input id="buscarPerfil" type="text" class="w-25 p-2" placeholder="Nome do usuario">
+        <button id="buscar" type="button" class="btn btn-primary p-2">Informações Users GitHub</button>
 
     </div>
 
-    <div id="perfil">
+    <div id="baixo">
+        <div id="fotoBio" class="container mt-5">
+            
+        </div>
+        <div id="nomeDatas" class="mt-5">
 
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -31,7 +36,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-
+    <script src="./script.js"></script>
 </body>
 
 </html>

@@ -4,9 +4,33 @@
 }
 
 .topo {
-    margin-top: 200px;
+    /* margin-top: 200px; */
 }
 
 .center {
     margin: auto;
+}
+
+img {
+    border-radius: 50%;
+    width: 200px;
+}
+
+#baixo{
+    display: inline-flex;
+    justify-content: flex-start;
+    margin-left: 100px;
+}
+
+#fotoBio {
+    width: 200px;
+}
+
+#fotoBio p {
+    margin-top: 15px;
+}
+
+#nomeDatas {
+    margin-left: 50px;
+    padding-top: 50px;
 }
