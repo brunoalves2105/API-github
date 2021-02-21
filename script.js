@@ -24,6 +24,8 @@ buscar.addEventListener('click', function(){
         res.bio + '</p>'
 
         nomeDatas.innerHTML += '<h1>' + res.name +'</h1><p>Desde: ' + diaInicio + '/' + mesInicio + '/' + anoInicio + ' | Ultima atualização: ' + diaAtualizacao + '/' + mesAtualizacao + '/' + anoAtualizacao + '</p>'
+    }).catch(function(){
+        perfil.innerHTML += '<h1>Perfil ' + buscarPerfil.value + ' não encontrado</h1>'
     })
 })
 
