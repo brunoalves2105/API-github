@@ -10,22 +10,19 @@ let nomeDatas = document.querySelector('#nomeDatas')
 
 buscar.addEventListener('click', function(){
     fetch('https://api.github.com/users/' + buscarPerfil.value).then(function(res){
+        perfil.innerHTML = ''
+        nomeDatas.innerHTML = ''
        return res.json()
     }).then(function(res){
-        let dataInicio = res.created_at
-        let dataAtualizacao = res.updated_at
-        let diaInicio = dataInicio.substring(8,10)
-        let mesInicio = dataInicio.substring(5,7)
-        let anoInicio = dataInicio.substring(0,4)
-        let diaAtualizacao = dataAtualizacao.substring(8,10)
-        let mesAtualizacao = dataAtualizacao.substring(5,7)
-        let anoAtualizacao = dataAtualizacao.substring(0,4)
+         let dataInicio = new Date (res.created_at).toLocaleDateString()
+        let dataAtualizacao = new Date (res.updated_at).toLocaleDateString()
         perfil.innerHTML += '<img src="' + res.avatar_url + '"><br><p>' +
         res.bio + '</p>'
 
-        nomeDatas.innerHTML += '<h1>' + res.name +'</h1><p>Desde: ' + diaInicio + '/' + mesInicio + '/' + anoInicio + ' | Ultima atualização: ' + diaAtualizacao + '/' + mesAtualizacao + '/' + anoAtualizacao + '</p>'
+        nomeDatas.innerHTML += '<h1>' + res.name +'</h1><p>Desde: ' + dataInicio + ' | Ultima atualização: ' + dataAtualizacao + '</p>'
+
     }).catch(function(){
-        perfil.innerHTML += '<h1>Perfil ' + buscarPerfil.value + ' não encontrado</h1>'
+        document.querySelector('.topo').innerHTML += '<p>Perfil <b>' + buscarPerfil.value + '</b> não encontrado</p>'
     })
 })
 
